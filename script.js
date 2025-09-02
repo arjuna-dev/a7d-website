@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
         X[Company Website] --> cf1
         
         classDef userClass fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
-        classDef workerClass fill:#f0fdf4,stroke:#10b981,stroke-width:2px,color:#1e293b
-        classDef websiteClass fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#1e293b
-        classDef expertClass fill:#fce7f3,stroke:#ec4899,stroke-width:2px,color:#1e293b
+        classDef workerClass fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#1e293b
+        classDef websiteClass fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#1e293b
+        classDef expertClass fill:#e0e7ff,stroke:#6366f1,stroke-width:2px,color:#1e293b
         
         class A userClass
         class cf1,cf2 workerClass

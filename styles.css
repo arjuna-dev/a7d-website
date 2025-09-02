@@ -9,16 +9,16 @@
   --primary-color: #2563eb;
   --primary-dark: #1d4ed8;
   --secondary-color: #64748b;
-  --accent-color: #f59e0b;
+  --accent-color: #3b82f6;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
   --text-light: #94a3b8;
   --background: #ffffff;
   --background-light: #f8fafc;
   --border-color: #e2e8f0;
-  --success-color: #10b981;
-  --error-color: #ef4444;
-  --warning-color: #f59e0b;
+  --success-color: #3b82f6;
+  --error-color: #1e40af;
+  --warning-color: #60a5fa;
 }
 
 body {
@@ -257,11 +257,11 @@ body {
 }
 
 .result-box {
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
   padding: 2rem;
   border-radius: 0.75rem;
   text-align: center;
-  border: 1px solid #fca5a5;
+  border: 1px solid #93c5fd;
 }
 
 .result-box h3 {
@@ -307,11 +307,11 @@ body {
 }
 
 .value-prop {
-  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
   padding: 2rem;
   border-radius: 0.75rem;
   text-align: center;
-  border: 1px solid #6ee7b7;
+  border: 1px solid #93c5fd;
 }
 
 .value-prop p {
