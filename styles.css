@@ -181,18 +181,25 @@ body {
 
 .mermaid-container {
   background: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin-bottom: 3rem;
   overflow-x: auto;
+  overflow-y: visible;
 }
 
 #mermaid-diagram {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
+  min-height: 600px;
+  width: 100%;
+}
+
+#mermaid-diagram svg {
+  max-width: 100%;
+  height: auto;
 }
 
 .architecture-explanation {
@@ -749,12 +756,18 @@ body {
   }
 }
 
-/* Mermaid Diagram Styling */
-.mermaid {
+/* D3.js Diagram Styling */
+.mermaid-container svg {
   background: white;
+  font-family: "Inter", sans-serif;
 }
 
-/* Custom scrollbar for mermaid container */
+.mermaid-container .link-label {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom scrollbar for diagram container */
 .mermaid-container::-webkit-scrollbar {
   height: 8px;
 }
