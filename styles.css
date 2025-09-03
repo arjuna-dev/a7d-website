@@ -6,16 +6,17 @@
 }
 
 :root {
-  --primary-color: #ec4899;
-  --primary-dark: #be185d;
-  --secondary-color: #64748b;
-  --accent-color: #f472b6;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
+  --primary-color: #f472b6;
+  --primary-dark: #ec4899;
+  --secondary-color: #94a3b8;
+  --accent-color: #fbbf24;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
   --text-light: #94a3b8;
-  --background: #ffffff;
-  --background-light: #fdf2f8;
-  --border-color: #f3e8ff;
+  --background: #0f0f14;
+  --background-light: #1a1a22;
+  --background-card: #252530;
+  --border-color: #374151;
   --success-color: #10b981;
   --error-color: #ef4444;
   --warning-color: #f59e0b;
@@ -29,6 +30,10 @@
   --pink-700: #be185d;
   --pink-800: #9d174d;
   --pink-900: #831843;
+  --gray-800: #1f2937;
+  --gray-850: #1a202c;
+  --gray-900: #111827;
+  --gray-950: #0f0f14;
 }
 
 body {
@@ -51,7 +56,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(15, 15, 20, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
@@ -135,8 +140,8 @@ body {
   padding: 8rem 0 4rem;
   background: linear-gradient(
     135deg,
-    var(--background-light) 0%,
-    var(--background) 100%
+    var(--background) 0%,
+    var(--background-light) 100%
   );
   text-align: center;
 }
@@ -190,10 +195,11 @@ body {
 }
 
 .mermaid-container {
-  background: white;
+  background: var(--background-card);
   padding: clamp(0.5rem, 2vw, 1.5rem);
   border-radius: clamp(0.5rem, 2vw, 1rem);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
   margin-bottom: 3rem;
   overflow: visible;
   width: 100%;
@@ -222,10 +228,11 @@ body {
 }
 
 .arch-point {
-  background: white;
+  background: var(--background-card);
   padding: 2rem;
   border-radius: 0.75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
 }
 
 .arch-point h3 {
@@ -263,10 +270,11 @@ body {
 }
 
 .problem-item {
-  background: var(--pink-50);
+  background: var(--background-card);
   padding: 2rem;
   border-radius: 0.75rem;
   border-left: 4px solid var(--primary-color);
+  border: 1px solid var(--border-color);
 }
 
 .problem-item h3 {
@@ -277,18 +285,19 @@ body {
 }
 
 .result-box {
-  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-200) 100%);
+  background: linear-gradient(135deg, var(--background-card) 0%, var(--background-light) 100%);
   padding: 2rem;
   border-radius: 0.75rem;
   text-align: center;
-  border: 1px solid var(--pink-300);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.1);
 }
 
 .result-box h3 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--primary-dark);
+  color: var(--primary-color);
 }
 
 /* Solution Section */
@@ -312,11 +321,12 @@ body {
 }
 
 .solution-item {
-  background: white;
+  background: var(--background-card);
   padding: 2rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border-left: 4px solid var(--primary-color);
+  border: 1px solid var(--border-color);
 }
 
 .solution-item h3 {
@@ -327,11 +337,12 @@ body {
 }
 
 .value-prop {
-  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-200) 100%);
+  background: linear-gradient(135deg, var(--background-card) 0%, var(--background-light) 100%);
   padding: 2rem;
   border-radius: 0.75rem;
   text-align: center;
-  border: 1px solid var(--pink-300);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.1);
 }
 
 .value-prop p {
@@ -397,10 +408,11 @@ body {
 }
 
 .dashboard-features {
-  background: white;
+  background: var(--background-card);
   padding: 2rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
   margin-bottom: 2rem;
 }
 
@@ -453,15 +465,17 @@ body {
 }
 
 .comparison-column {
-  background: var(--background-light);
+  background: var(--background-card);
   padding: 2rem;
   border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
 }
 
 .highlight-column {
-  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-200) 100%);
+  background: linear-gradient(135deg, var(--background-card) 0%, var(--background-light) 100%);
   border: 2px solid var(--primary-color);
   transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.1);
 }
 
 .comparison-column h3 {
@@ -517,10 +531,11 @@ body {
 }
 
 .region {
-  background: white;
+  background: var(--background-card);
   padding: 2rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
 }
 
 .region h3 {
@@ -556,9 +571,10 @@ body {
 }
 
 .coverage-region {
-  background: var(--background-light);
+  background: var(--background-card);
   padding: 2rem;
   border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
 }
 
 .coverage-region h3,
@@ -597,10 +613,11 @@ body {
 }
 
 .pricing-features {
-  background: white;
+  background: var(--background-card);
   padding: 2rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -677,9 +694,10 @@ body {
 
 /* Footer */
 .footer {
-  background: var(--text-primary);
-  color: white;
+  background: var(--gray-950);
+  color: var(--text-primary);
   padding: 3rem 0 1rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -786,12 +804,12 @@ body {
 
 /* D3.js Diagram Styling */
 .mermaid-container svg {
-  background: white;
+  background: var(--background-card);
   font-family: "Inter", sans-serif;
 }
 
 .mermaid-container .link-label {
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   font-family: "Inter", sans-serif;
 }
 

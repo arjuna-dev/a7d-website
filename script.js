@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
       .attr("width", "100%")
       .attr("height", containerHeight)
       .attr("viewBox", `0 0 ${containerWidth} ${containerHeight}`)
-      .style("background", "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)")
+      .style("background", "linear-gradient(135deg, #252530 0%, #1a1a22 100%)")
       .style("border-radius", `${Math.max(8, 12 * scale)}px`)
-      .style("box-shadow", "0 4px 20px rgba(0,0,0,0.08)");
+      .style("box-shadow", "0 4px 20px rgba(0,0,0,0.3)");
 
     const g = svg
       .append("g")
@@ -165,10 +165,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .attr("style", `stop-color:${color2};stop-opacity:1`);
     };
 
-    createGradient("userGradient", "#fce7f3", "#fbcfe8");
-    createGradient("workerGradient", "#fdf2f8", "#fce7f3");
-    createGradient("expertGradient", "#f3e8ff", "#e9d5ff");
-    createGradient("websiteGradient", "#f1f5f9", "#e2e8f0");
+    createGradient("userGradient", "#3b2764", "#2e1f4f");
+    createGradient("workerGradient", "#4c1d47", "#3b2764");
+    createGradient("expertGradient", "#831843", "#4c1d47");
+    createGradient("websiteGradient", "#374151", "#1f2937");
 
     // Glow filter
     const glowFilter = defs
@@ -196,11 +196,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetNode = nodes.find((n) => n.id === link.target);
 
       const colors = {
-        primary: "#ec4899",
-        expert: "#be185d",
-        flow: "#f472b6",
+        primary: "#f472b6",
+        expert: "#ec4899",
+        flow: "#fbbf24",
         success: "#10b981",
-        secondary: "#64748b",
+        secondary: "#94a3b8",
       };
 
       const color = colors[link.type] || "#64748b";
@@ -311,10 +311,10 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       const strokeMap = {
-        user: "#ec4899",
-        worker: "#f472b6",
-        expert: "#be185d",
-        website: "#64748b",
+        user: "#f472b6",
+        worker: "#ec4899",
+        expert: "#db2777",
+        website: "#94a3b8",
       };
 
       // Node background circle with responsive radius
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
           .attr("dy", 15 * scale + i * (14 * scale))
           .style("font-size", `${labelSize}px`)
           .style("font-weight", "700")
-          .style("fill", "#1e293b")
+          .style("fill", "#f8fafc")
           .style("font-family", "Inter, sans-serif")
           .text(line);
       });
@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .attr("y", node.isMultiline ? 40 * scale : 30 * scale)
         .style("font-size", `${descriptionSize}px`)
         .style("font-weight", "500")
-        .style("fill", "#64748b")
+        .style("fill", "#cbd5e1")
         .style("font-family", "Inter, sans-serif");
 
       // Split description by \n and create tspan for each line
@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .attr("text-anchor", "middle")
       .style("font-size", `${titleSize}px`)
       .style("font-weight", "700")
-      .style("fill", "#1e293b")
+      .style("fill", "#f8fafc")
       .style("font-family", "Inter, sans-serif")
       .style("opacity", 0)
       .text("a7d Edge Processing Architecture")
@@ -532,10 +532,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", function () {
     const navbar = document.querySelector(".navbar");
     if (window.scrollY > 100) {
-      navbar.style.background = "rgba(255, 255, 255, 0.98)";
       navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
     } else {
-      navbar.style.background = "rgba(255, 255, 255, 0.95)";
       navbar.style.boxShadow = "none";
     }
   });
