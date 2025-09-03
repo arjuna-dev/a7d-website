@@ -17,7 +17,7 @@
   --background-light: #f8fafc;
   --border-color: #e2e8f0;
   --success-color: #3b82f6;
-  --error-color: #1e40af;
+  --error-color: #c38383;
   --warning-color: #60a5fa;
 }
 
@@ -253,14 +253,14 @@ body {
   background: var(--background-light);
   padding: 2rem;
   border-radius: 0.75rem;
-  border-left: 4px solid var(--error-color);
+  border-left: 4px solid var(--success-color);
 }
 
 .problem-item h3 {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--error-color);
+  color: var(--success-color);
 }
 
 .result-box {
@@ -275,7 +275,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--error-color);
+  color: var(--success-color);
 }
 
 /* Solution Section */
