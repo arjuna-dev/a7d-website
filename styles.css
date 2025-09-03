@@ -181,25 +181,28 @@ body {
 
 .mermaid-container {
   background: white;
-  padding: 1rem;
-  border-radius: 1rem;
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+  border-radius: clamp(0.5rem, 2vw, 1rem);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin-bottom: 3rem;
-  overflow-x: auto;
-  overflow-y: visible;
+  overflow: visible;
+  width: 100%;
 }
 
 #mermaid-diagram {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 600px;
+  min-height: clamp(300px, 50vw, 600px);
   width: 100%;
+  position: relative;
 }
 
 #mermaid-diagram svg {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  max-width: 100%;
+  display: block;
 }
 
 .architecture-explanation {
@@ -743,6 +746,21 @@ body {
 
   .process-flow {
     grid-template-columns: 1fr;
+  }
+
+  /* Responsive diagram adjustments */
+  .mermaid-container {
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  #mermaid-diagram {
+    min-height: 300px;
+  }
+
+  .architecture-explanation {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .enforcement-regions,
