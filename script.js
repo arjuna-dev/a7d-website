@@ -165,9 +165,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .attr("style", `stop-color:${color2};stop-opacity:1`);
     };
 
-    createGradient("userGradient", "#dbeafe", "#bfdbfe");
-    createGradient("workerGradient", "#eff6ff", "#dbeafe");
-    createGradient("expertGradient", "#e0e7ff", "#c7d2fe");
+    createGradient("userGradient", "#fce7f3", "#fbcfe8");
+    createGradient("workerGradient", "#fdf2f8", "#fce7f3");
+    createGradient("expertGradient", "#f3e8ff", "#e9d5ff");
     createGradient("websiteGradient", "#f1f5f9", "#e2e8f0");
 
     // Glow filter
@@ -196,9 +196,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetNode = nodes.find((n) => n.id === link.target);
 
       const colors = {
-        primary: "#2563eb",
-        expert: "#6366f1",
-        flow: "#3b82f6",
+        primary: "#ec4899",
+        expert: "#be185d",
+        flow: "#f472b6",
         success: "#10b981",
         secondary: "#64748b",
       };
@@ -311,9 +311,9 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       const strokeMap = {
-        user: "#2563eb",
-        worker: "#3b82f6",
-        expert: "#6366f1",
+        user: "#ec4899",
+        worker: "#f472b6",
+        expert: "#be185d",
         website: "#64748b",
       };
 
