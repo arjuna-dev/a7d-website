@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "user",
         label: "End User",
+        isMultiline: false,
         type: "user",
         x: width * 0.15,
         y: height * 0.3,
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "expert",
         label: "a7d Expert",
+        isMultiline: false,
         type: "expert",
         x: width * 0.15,
         y: height * 0.7,
@@ -57,15 +59,17 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "prod",
         label: "Production\nWorker",
+        isMultiline: true,
         type: "worker",
         x: width * 0.5,
         y: height * 0.3,
         icon: "⚡",
-        description: "Cloudflare Edge",
+        description: "Edge Worker",
       },
       {
         id: "sandbox",
         label: "Sandbox\nWorker",
+        isMultiline: true,
         type: "worker",
         x: width * 0.5,
         y: height * 0.7,
@@ -75,9 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "website",
         label: "Company\nWebsite",
+        isMultiline: true,
         type: "website",
         x: width * 0.85,
-        y: height * 0.5,
+        y: height * 0.3,
         icon: "🌍",
         description: "Origin server",
       },
@@ -88,28 +93,35 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         source: "expert",
         target: "sandbox",
-        label: "Reviews changes",
+        label: "Reviewed changes >>>",
         type: "expert",
         curve: false,
       },
       {
         source: "sandbox",
+        target: "expert",
+        label: "<<< Editor Overlay",
+        type: "expert",
+        curve: true,
+      },
+      {
+        source: "sandbox",
         target: "prod",
-        label: "Promotes changes",
+        label: "Promote changes ⬆",
         type: "flow",
         curve: false,
       },
       {
         source: "prod",
         target: "user",
-        label: "✅ Accessible code",
+        label: "<<< Accessible code ✅",
         type: "success",
         curve: false,
       },
       {
         source: "website",
         target: "prod",
-        label: "Original content",
+        label: "<<< Original content",
         type: "secondary",
         curve: false,
       },
@@ -183,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Create curved path
         const dx = targetNode.x - sourceNode.x;
         const dy = targetNode.y - sourceNode.y;
-        const dr = Math.sqrt(dx * dx + dy * dy) * 0.3;
+        const dr = Math.sqrt(dx * dx * 10 + dy * dy * 10) * 0.3;
 
         const path = linkGroup
           .append("path")
@@ -294,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Node background circle
       const circle = nodeG
         .append("circle")
-        .attr("r", 50)
+        .attr("r", 70)
         .attr("fill", gradientMap[node.type])
         .attr("stroke", strokeMap[node.type])
         .attr("stroke-width", 4)
@@ -328,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
       nodeG
         .append("text")
         .attr("text-anchor", "middle")
-        .attr("dy", 35)
+        .attr("dy", node.isMultiline ? 45 : 35)
         .style("font-size", "10px")
         .style("font-weight", "500")
         .style("fill", "#64748b")
