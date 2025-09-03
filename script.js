@@ -162,29 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
     feMerge.append("feMergeNode").attr("in", "coloredBlur");
     feMerge.append("feMergeNode").attr("in", "SourceGraphic");
 
-    // Arrow markers with different colors
-    const createArrowMarker = (id, color) => {
-      defs
-        .append("marker")
-        .attr("id", id)
-        .attr("viewBox", "0 -5 10 10")
-        .attr("refX", 12)
-        .attr("refY", 0)
-        .attr("markerWidth", 6)
-        .attr("markerHeight", 6)
-        .attr("orient", "auto")
-        .append("path")
-        .attr("d", "M0,-5L10,0L0,5")
-        .attr("fill", color)
-        .style("filter", "drop-shadow(0px 2px 4px rgba(0,0,0,0.2))");
-    };
-
-    createArrowMarker("arrow-primary", "#2563eb");
-    createArrowMarker("arrow-expert", "#6366f1");
-    createArrowMarker("arrow-flow", "#3b82f6");
-    createArrowMarker("arrow-success", "#10b981");
-    createArrowMarker("arrow-secondary", "#64748b");
-
     // Draw links with curves
     const linkGroup = g.append("g").attr("class", "links");
 
@@ -217,7 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
           .attr("stroke", color)
           .attr("stroke-width", 3)
           .attr("fill", "none")
-          .attr("marker-end", `url(#arrow-${link.type})`)
           .style("opacity", 0)
           .style("filter", "drop-shadow(0px 2px 4px rgba(0,0,0,0.1))");
 
@@ -261,7 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
           .attr("y2", sourceNode.y)
           .attr("stroke", color)
           .attr("stroke-width", 3)
-          .attr("marker-end", `url(#arrow-${link.type})`)
           .style("opacity", 0.8)
           .style("filter", "drop-shadow(0px 2px 4px rgba(0,0,0,0.1))")
           .transition()
