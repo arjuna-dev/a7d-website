@@ -17,7 +17,7 @@
   --background-light: #f8fafc;
   --border-color: #e2e8f0;
   --success-color: #3b82f6;
-  --error-color: #1e40af;
+  --error-color: #c38383;
   --warning-color: #60a5fa;
 }
 
@@ -181,18 +181,28 @@ body {
 
 .mermaid-container {
   background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+  border-radius: clamp(0.5rem, 2vw, 1rem);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin-bottom: 3rem;
-  overflow-x: auto;
+  overflow: visible;
+  width: 100%;
 }
 
 #mermaid-diagram {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
+  min-height: clamp(300px, 50vw, 600px);
+  width: 100%;
+  position: relative;
+}
+
+#mermaid-diagram svg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
 }
 
 .architecture-explanation {
@@ -246,14 +256,14 @@ body {
   background: var(--background-light);
   padding: 2rem;
   border-radius: 0.75rem;
-  border-left: 4px solid var(--error-color);
+  border-left: 4px solid var(--success-color);
 }
 
 .problem-item h3 {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--error-color);
+  color: var(--success-color);
 }
 
 .result-box {
@@ -268,7 +278,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--error-color);
+  color: var(--success-color);
 }
 
 /* Solution Section */
@@ -738,6 +748,21 @@ body {
     grid-template-columns: 1fr;
   }
 
+  /* Responsive diagram adjustments */
+  .mermaid-container {
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  #mermaid-diagram {
+    min-height: 300px;
+  }
+
+  .architecture-explanation {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .enforcement-regions,
   .coverage-regions {
     grid-template-columns: 1fr;
@@ -749,12 +774,18 @@ body {
   }
 }
 
-/* Mermaid Diagram Styling */
-.mermaid {
+/* D3.js Diagram Styling */
+.mermaid-container svg {
   background: white;
+  font-family: "Inter", sans-serif;
 }
 
-/* Custom scrollbar for mermaid container */
+.mermaid-container .link-label {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom scrollbar for diagram container */
 .mermaid-container::-webkit-scrollbar {
   height: 8px;
 }
