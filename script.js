@@ -86,13 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Define links with enhanced styling
     const links = [
       {
-        source: "user",
-        target: "prod",
-        label: "Requests content",
-        type: "primary",
-        curve: false,
-      },
-      {
         source: "expert",
         target: "sandbox",
         label: "Reviews changes",
@@ -101,37 +94,16 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         source: "sandbox",
-        target: "expert",
-        label: "Live editing tools",
-        type: "expert",
-        curve: true,
-      },
-      {
-        source: "sandbox",
         target: "prod",
         label: "Promotes changes",
         type: "flow",
-        curve: true,
-      },
-      {
-        source: "prod",
-        target: "sandbox",
-        label: "Syncs config",
-        type: "flow",
-        curve: true,
+        curve: false,
       },
       {
         source: "prod",
         target: "user",
         label: "✅ Accessible code",
         type: "success",
-        curve: true,
-      },
-      {
-        source: "prod",
-        target: "website",
-        label: "Fetches/Modifies",
-        type: "secondary",
         curve: false,
       },
       {
@@ -139,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         target: "prod",
         label: "Original content",
         type: "secondary",
-        curve: true,
+        curve: false,
       },
     ];
 
